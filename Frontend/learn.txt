@@ -1,0 +1,41 @@
+first install tailwind css new version
+
+then also install --> npm i react-router-dom
+
+then install font - outfit font search in google
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+use navigate for redirect to buy page
+ const navigate= useNavigate();
+
+isme click krennge toh buy wla page open ho 
+jyga navigate ho jyga mtlb smjha
+ <p onClick={()=>navigate('/buy')} 
+    className='cursor-pointer'>Pricing</p>
+
+tailwind me absolute se ky hoga
+ Isme image parent hai aur h1 image ke upar aa jayega. 
+
+ <div className="relative">
+  <img src="/hero.jpg" className="w-full" />
+
+  <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl">
+    Welcome
+  </h1>
+</div>
+
+//tailwind property
+screen ke size ke liye
+<h1 className="text-xl md:text-4xl lg:text-6xl">
+  Hello
+</h1>
+
+Iska matlab:
+
+Normal/mobile → text-xl
+md screen se → text-4xl
+lg screen se → text-6xl
+navabr
+
+then design header.jsx

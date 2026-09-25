@@ -39,3 +39,5 @@ lg screen se → text-6xl
 navabr
 
 then design header.jsx
+
+ border-neutral-500 border color krte hai isse

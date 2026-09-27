@@ -75,3 +75,36 @@ adding motion in website make the website more creating user friendly
           <img  className="h-6" 
           src={assets.star_group} alt="" />
         </motion.button>
+
+
+prompt ke liye we use clipdrop for
+creating image
+ generateImage()
+                    │
+                    ▼
+          prompt + userId lo
+                    │
+                    ▼
+             User find karo
+                    │
+                    ▼
+          Credits > 0 hain?
+             │             │
+            NO            YES
+             │             │
+             ▼             ▼
+           STOP       ClipDrop ko
+                       prompt bhejo
+                           │
+                           ▼
+                     Image Buffer
+                           │
+                           ▼
+                       Base64
+                           │
+                           ▼
+                    Credit - 1
+                           │
+                           ▼
+                    Frontend ko
+                    image bhejo

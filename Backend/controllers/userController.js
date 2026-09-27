@@ -51,3 +51,90 @@ const registerUser = async (req, res) => {
         })
     }
 }
+const loginUser = async (req,res) => {
+    
+   try {
+       // 1. Get email and password
+    const {email, password}  =  req.body;
+    
+        // 2. Find user by email
+    const user = await userModel.findOne({email});
+
+    if(!user){
+        return res.json({
+            success:false,
+            message:"User does not exist"
+        })
+    }
+   
+    //compare password
+
+    const isMatch = await bcrypt.compare(password,user.password);
+
+      //agr nhi match hua toh
+     if (!isMatch) {
+            return res.json({
+                success: false,
+                message: "Invalid credentials"
+            });
+        }
+
+       //agr match ho gya hai toh
+        // 4. Generate JWT token
+        const token = jwt.sign(
+            { id: user._id },
+            process.env.JWT_SECRET
+        );
+
+
+        // 5. Send response
+        res.json({
+            success: true,
+            token
+        });
+
+
+   } catch (error) {
+
+     console.log(error);
+        res.json({
+            success:false,
+            message:error.message
+        })
+    
+   }
+}
+const userCredits = async (req, res) => {
+    try {
+
+        const {userId} = req.body
+
+        const user = await userModel.findOne({_id:userId})
+        
+        if(!user){
+            return res.json({
+                success:false,
+                message:"User not found"
+            });
+        }
+
+        res.json({
+            success:true,
+            credits:user.creditBalance,
+            user:{name:user.name}
+        })
+        
+    } catch (error) {
+
+        console.log(error);
+        res.json({
+            success:false,
+            message:error.message
+        })
+        
+    }
+}
+
+module.exports={
+    registerUser,loginUser,userCredits,
+}

@@ -108,3 +108,10 @@ creating image
                            ▼
                     Frontend ko
                     image bhejo
+
+
+//notifigication ke liye 
+use toastify
+npm i react-toastify      
+
+    <ToastContainer position="top-right" /> postition of notification

@@ -6,7 +6,7 @@ import { AppContext } from '../context/AppContext'
 
 const Navbar = () => {
 
-    const {user, setShowLogin} = useContext(AppContext)
+    const {user, setShowLogin, logout, credit} = useContext(AppContext)
 
     
 
@@ -36,19 +36,19 @@ const Navbar = () => {
               alt="credit_star" />
 
               <p className='text-xs sm:text-sm font-medium text-gray-600'
-              >Credit left: 50</p>       
+              >Credit left: {credit}</p>       
 
               </button>
 
               <p className='text-gray-600 max-sm:hidden pl-4 '>
-                Hi, Mayank</p>
+                Hi, {user.name}</p>
 
 
               <div className='relative group'>
                 <img src={assets.profile_icon} className='w-10 drop-shadow' alt="" />
                 <div className='absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12'>
                    <ul className='list-none m-0 p-2 bg-white rounded-md border text-sm'>
-                    <li className='py-1 px-2 cursor-pointer pr-10'>
+                    <li onClick={logout} className='py-1 px-2 cursor-pointer pr-10'>
                       Logout
                     </li>
                    </ul>

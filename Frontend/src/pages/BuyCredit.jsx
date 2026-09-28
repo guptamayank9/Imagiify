@@ -103,7 +103,7 @@ const BuyCredit = () => {
 
             <p className="mt-6">
               {" "}
-              <span className="text-3xl font-medium">${item.price}</span> /{" "}
+              <span className="text-3xl font-medium">₹{item.price}</span> /{" "}
               {item.credits} credits
             </p>
 

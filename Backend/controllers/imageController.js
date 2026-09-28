@@ -2,12 +2,13 @@ const axios = require("axios");
 
 const userModel = require('../models/userModel');
 const FormData =require('form-data');
+
 const generateImage = async (req, res) => {
 
     try {
          // Get userId and prompt
-        const {userId, prompt} = req.body;
-         
+        const {prompt} = req.body;
+          const userId = req.userId;
         // Find user
         const user = await userModel.findOne({_id:userId});
         

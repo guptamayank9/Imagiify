@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { motion } from "motion/react"
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 
 const Result = () => {
 
@@ -12,9 +14,22 @@ const Result = () => {
   const[loading, setLoading]= useState(true);
 
   const [input, setInput] = useState('');
+  const { generateImage} = useContext(AppContext);
 
   const onSubmithandler = async (e) => {
-    
+    e.preventDefault();
+
+    setLoading(true);
+  //have prompt
+    if(input){
+   const image = await generateImage(input);
+   if(image){
+    setIsImageLoaded(true);
+    setImage(image);
+  }
+
+    }
+    setLoading(false);
   }
  
 

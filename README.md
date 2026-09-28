@@ -25,8 +25,11 @@ Protected backend APIs
 Frontend: React, Vite, Axios, React Router, Tailwind CSS,
 
 Backend: Node.js, Express.js, Mongoose, JWT, bcrypt
+
 Database: MongoDB Atlas
+
 APIs: ClipDrop, Razorpay
+
 Deployment: Vercel + Render
 
 📁 Project Structure

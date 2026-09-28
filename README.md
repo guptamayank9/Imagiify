@@ -22,7 +22,8 @@ Protected backend APIs
 
 🛠 Tech Stack
 
-Frontend: React, Vite, Axios, React Router, Tailwind CSS
+Frontend: React, Vite, Axios, React Router, Tailwind CSS,
+
 Backend: Node.js, Express.js, Mongoose, JWT, bcrypt
 Database: MongoDB Atlas
 APIs: ClipDrop, Razorpay
